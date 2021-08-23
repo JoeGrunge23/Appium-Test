@@ -16,11 +16,12 @@ public class AppiumDriveEx {
         try {
             //Set DesiredCapabilities to send to Appium server
             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-            desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-            desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-            desiredCapabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-            desiredCapabilities.setCapability("appPackage", "com.wdiodemoapp");
-            desiredCapabilities.setCapability("appActivity", "com.wdiodemoapp.MainActivity");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "uiautomator2");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "emulator-5554");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+            desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
 
             //Set the Appium server URL to connect
             //Instantiate from java.net
