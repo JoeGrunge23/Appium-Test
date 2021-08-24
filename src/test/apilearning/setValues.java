@@ -4,10 +4,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import utils.AppiumDriveEx;
 
+import java.util.concurrent.TimeUnit;
+
 public class setValues {
     public static void main(String[] args) {
     //1. Launch the targety app
         AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAppiumDriver();
+        appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     //2. Click on login Label
         MobileElement loginLabel = appiumDriver.findElementByAccessibilityId("Login");
