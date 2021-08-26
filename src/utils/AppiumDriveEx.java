@@ -6,6 +6,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class AppiumDriveEx {
     public static AppiumDriver<MobileElement> getAppiumDriver() {
@@ -28,6 +29,11 @@ public class AppiumDriveEx {
             URL appiumServer = new URL("http://localhost:4723/wd/hub");
 
             appiumDriver = new AppiumDriver<>(appiumServer, desiredCapabilities);
+            appiumDriver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
+
+            MobileElement loginLabel = appiumDriver.findElementByAccessibilityId("Login");
+            loginLabel.click();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
