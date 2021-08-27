@@ -11,18 +11,18 @@ import utils.AppiumDriveEx;
 
 import java.time.Duration;
 
-public class SwipeVertically {
+public class SwipeHorizontally {
     public static void main(String[] args) {
 
         //Create a session
         AppiumDriver appiumDriver = AppiumDriveEx.getAppiumDriver();
 
-        //Click form label
-        appiumDriver.findElementByAccessibilityId("Forms").click();
+        //Click swipe label
+        appiumDriver.findElementByAccessibilityId("Swipe").click();
 
         //Make sure I'm on the target screen
         WebDriverWait wait = new WebDriverWait(appiumDriver, 30L);
-        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElementByAccessibilityId("switch-text")));
+        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElementByXPath("//*[@text='Swipe horizontal']")));
 
 
         //Get mobile screen sizes
@@ -31,12 +31,12 @@ public class SwipeVertically {
         int screenWidth = windowSize.getWidth();
 
 
-
         //init start point and end points to touch and release
-        int xStartPoint = 50 *  screenWidth/100;
-        int xEndPoint = xStartPoint;
-        int yStartPoint = 90 * screenHeight / 100;
-        int yEndPoint = 10 * screenHeight / 100;
+        int xStartPoint = 50 * screenWidth/100;
+        int xEndPoint = 10 * screenWidth/100;
+        int yStartPoint = 50 * screenHeight / 100;
+        int yEndPoint = yStartPoint ;
+
 
         //perform the touch actions
         PointOption startPoint = new PointOption().withCoordinates(xStartPoint, yStartPoint);
@@ -44,7 +44,7 @@ public class SwipeVertically {
 
         TouchAction touchAction = new TouchAction(appiumDriver);
 
-        //Scroll up from bottom to top
+        //Scroll up from right to left
         touchAction
                 .press(startPoint)
                 .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
@@ -52,7 +52,7 @@ public class SwipeVertically {
                 .release()
                 .perform();
 
-        //Scrop down
+        //Scroll from left to right
         touchAction
                 .press(endPoint)
                 .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
