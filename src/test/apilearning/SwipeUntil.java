@@ -44,16 +44,6 @@ public class SwipeUntil {
 
         TouchAction touchAction = new TouchAction(appiumDriver);
 
-
-
-//        //Scroll from left to right
-//        touchAction
-//                .press(endPoint)
-//                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
-//                .moveTo(startPoint)
-//                .release()
-//                .perform();
-
         //Swipe form right to left until I see the "EXTENDABLE" card and the swipe time is less than 6
         int swipeTime = 0;
         boolean notSeeingTheTargetCard = true;
