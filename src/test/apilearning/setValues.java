@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class setValues {
     public static void main(String[] args) {
     //1. Launch the targety app
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAndroidDriver();
         appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     //2. Click on login Label

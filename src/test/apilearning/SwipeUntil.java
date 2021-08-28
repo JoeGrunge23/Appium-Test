@@ -15,7 +15,7 @@ public class SwipeUntil {
     public static void main(String[] args) {
 
         //Create a session
-        AppiumDriver appiumDriver = AppiumDriveEx.getAppiumDriver();
+        AppiumDriver appiumDriver = AppiumDriveEx.getAndroidDriver();
 
         //Click swipe label
         appiumDriver.findElementByAccessibilityId("Swipe").click();

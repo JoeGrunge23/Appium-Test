@@ -1,22 +1,16 @@
 package test.apilearning;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.AppiumDriveEx;
 import utils.SwipeAction;
 
-import java.time.Duration;
-
 public class SwipeVertically {
     public static void main(String[] args) {
 
         //Create a session
-        AppiumDriver appiumDriver = AppiumDriveEx.getAppiumDriver();
+        AppiumDriver appiumDriver = AppiumDriveEx.getAndroidDriver();
 
         //Click form label
         appiumDriver.findElementByAccessibilityId("Forms").click();

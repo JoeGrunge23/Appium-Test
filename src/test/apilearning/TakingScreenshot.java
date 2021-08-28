@@ -14,7 +14,7 @@ public class TakingScreenshot {
     public static void main(String[] args) {
 
         //Create a session
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAndroidDriver();
 
         //Navigate to form screen
         MobileElement formsLabel = appiumDriver.findElementByAccessibilityId("Forms");

@@ -1,18 +1,17 @@
 package utils;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class AppiumDriveEx {
-    public static AppiumDriver<MobileElement> getAppiumDriver() {
+    public static AndroidDriver<MobileElement> getAndroidDriver() {
 
         //Driver instance
-        AppiumDriver<MobileElement> appiumDriver = null;
+        AndroidDriver<MobileElement> androidDriver = null;
 
         try {
             //Set DesiredCapabilities to send to Appium server
@@ -28,15 +27,15 @@ public class AppiumDriveEx {
             //Instantiate from java.net
             URL appiumServer = new URL("http://localhost:4723/wd/hub");
 
-            appiumDriver = new AppiumDriver<>(appiumServer, desiredCapabilities);
-            appiumDriver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
+            androidDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCapabilities);
+            androidDriver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
 
-            MobileElement loginLabel = appiumDriver.findElementByAccessibilityId("Login");
+            MobileElement loginLabel = androidDriver.findElementByAccessibilityId("Login");
             loginLabel.click();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return appiumDriver;
+        return androidDriver;
     }
 }

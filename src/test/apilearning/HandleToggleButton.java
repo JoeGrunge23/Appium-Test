@@ -8,7 +8,7 @@ public class HandleToggleButton {
     public static void main(String[] args) {
 
         //Launch appium session
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriveEx.getAndroidDriver();
 
         //Click on the [Forms label]
         MobileElement formsLabel = appiumDriver.findElementByAccessibilityId("Forms");
