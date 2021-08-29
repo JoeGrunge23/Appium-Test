@@ -22,12 +22,25 @@ public class LoginPage {
     public MobileElement username() {
         return appiumDriver.findElement(usernameSelById);
     }
+    
+    public void inputUsername(String usernameText) {
+        this.username().sendKeys(usernameText);
+    }
 
     public MobileElement password() {
         return appiumDriver.findElement(passwordSelById);
     }
 
+
+    public void inputPassword(String passwordText) {
+        this.password().sendKeys(passwordText);
+    }
+
     public MobileElement loginBtn() {
         return appiumDriver.findElement(loginBtnSelById);
+    }
+
+    public void clickOnLoginBtn() {
+        this.loginBtn().click();
     }
 }
